@@ -5,6 +5,7 @@ class DfJson(object):
     def __init__(self,file_path):
         self.file_path = file_path
         self.df = self.convert_to_df()
+        self.subset_df = self.df[0:1000]
     
     def convert_to_df(self):
         with open(self.file_path,'r') as json_file:
@@ -21,4 +22,5 @@ class DfJson(object):
 if __name__ == '__main__':
     file_path = 'data/concatenated_abridged.jsonl'
     data = DfJson(file_path)
+    # data.subset_df.to_pickle('data/pkl_df/df.pkl')
     data.df.to_pickle('data/pkl_df/df.pkl')
