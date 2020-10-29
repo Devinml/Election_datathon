@@ -16,6 +16,8 @@ class DfJson(object):
         df = pd.DataFrame(json_list)
         return df
 
+
+
 if __name__ == '__main__':
     file_path = 'data/concatenated_abridged.jsonl'
     data = DfJson(file_path)
